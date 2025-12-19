@@ -2533,6 +2533,15 @@ wheels = [
 ]
 
 [[package]]
+name = "python-dotenv"
+version = "1.2.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/f0/26/19cadc79a718c5edbec86fd4919a6b6d3f681039a2f6d66d14be94e75fb9/python_dotenv-1.2.1.tar.gz", hash = "sha256:42667e897e16ab0d66954af0e60a9caa94f0fd4ecf3aaf6d2d260eec1aa36ad6", size = 44221, upload-time = "2025-10-26T15:12:10.434Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/14/1b/a298b06749107c305e1fe0f814c6c74aea7b2f1e10989cb30f544a1b3253/python_dotenv-1.2.1-py3-none-any.whl", hash = "sha256:b81ee9561e9ca4004139c6cbba3a238c32b03e4894671e181b671e8cb8425d61", size = 21230, upload-time = "2025-10-26T15:12:09.109Z" },
+]
+
+[[package]]
 name = "python-json-logger"
 version = "4.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -3089,11 +3098,22 @@ wheels = [
 name = "sam3"
 source = { editable = "." }
 dependencies = [
+    { name = "decord" },
+    { name = "einops" },
     { name = "ftfy" },
     { name = "huggingface-hub" },
     { name = "iopath" },
+    { name = "matplotlib" },
     { name = "numpy" },
+    { name = "opencv-python" },
+    { name = "pandas" },
+    { name = "psutil" },
+    { name = "pycocotools" },
+    { name = "python-dotenv" },
     { name = "regex" },
+    { name = "scikit-image" },
+    { name = "scikit-learn" },
+    { name = "setuptools" },
     { name = "timm" },
     { name = "tqdm" },
     { name = "typing-extensions" },
@@ -3145,7 +3165,9 @@ train = [
 [package.metadata]
 requires-dist = [
     { name = "black", marker = "extra == 'dev'", specifier = "==24.2.0" },
+    { name = "decord", specifier = ">=0.6.0" },
     { name = "decord", marker = "extra == 'notebooks'" },
+    { name = "einops", specifier = ">=0.8.1" },
     { name = "einops", marker = "extra == 'notebooks'" },
     { name = "fairscale", marker = "extra == 'train'" },
     { name = "ftfy", specifier = "==6.1.1" },
@@ -3158,25 +3180,34 @@ requires-dist = [
     { name = "ipympl", marker = "extra == 'notebooks'" },
     { name = "ipywidgets", marker = "extra == 'notebooks'" },
     { name = "jupyter", marker = "extra == 'notebooks'" },
+    { name = "matplotlib", specifier = ">=3.10.8" },
     { name = "matplotlib", marker = "extra == 'notebooks'" },
     { name = "notebook", marker = "extra == 'notebooks'" },
     { name = "numba", marker = "extra == 'dev'" },
     { name = "numpy", specifier = "==1.26" },
+    { name = "opencv-python", specifier = ">=4.11.0.86" },
     { name = "opencv-python", marker = "extra == 'dev'" },
     { name = "opencv-python", marker = "extra == 'notebooks'" },
+    { name = "pandas", specifier = ">=2.3.3" },
     { name = "pandas", marker = "extra == 'dev'" },
+    { name = "psutil", specifier = ">=7.1.3" },
+    { name = "pycocotools", specifier = ">=2.0.11" },
     { name = "pycocotools", marker = "extra == 'dev'" },
     { name = "pycocotools", marker = "extra == 'notebooks'" },
     { name = "pytest", marker = "extra == 'dev'" },
     { name = "pytest-cov", marker = "extra == 'dev'" },
+    { name = "python-dotenv", specifier = ">=1.2.1" },
     { name = "python-rapidjson", marker = "extra == 'dev'" },
     { name = "regex" },
     { name = "ruff-api", marker = "extra == 'dev'", specifier = "==0.1.0" },
+    { name = "scikit-image", specifier = ">=0.25.2" },
     { name = "scikit-image", marker = "extra == 'notebooks'" },
     { name = "scikit-image", marker = "extra == 'train'" },
+    { name = "scikit-learn", specifier = ">=1.8.0" },
     { name = "scikit-learn", marker = "extra == 'notebooks'" },
     { name = "scikit-learn", marker = "extra == 'train'" },
     { name = "scipy", marker = "extra == 'train'" },
+    { name = "setuptools", specifier = ">=80.9.0" },
     { name = "submitit", marker = "extra == 'train'" },
     { name = "tensorboard", marker = "extra == 'train'" },
     { name = "timm", specifier = ">=1.0.17" },

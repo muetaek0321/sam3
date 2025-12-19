@@ -4,6 +4,7 @@ FROM ubuntu:latest
 # 必要なソフトのインストール
 RUN apt-get update && apt-get install -y \
     git \
+    libopencv-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # uvのインストール
