@@ -12,14 +12,14 @@ load_dotenv()
 
 login(token=os.getenv("HF_TOKEN"))
 
-# Load the model
+# モデルの準備
 model = build_sam3_image_model()
 processor = Sam3Processor(model)
-# Load an image
-image = Image.open("data/2007_007414.jpg")
+# 画像の読み込み
+image = Image.open("data/1624777685449_985774_photo1.jpeg")
 inference_state = processor.set_image(image)
-# Prompt the model with text
-output = processor.set_text_prompt(state=inference_state, prompt="pylon")
+# テキストプロンプトを設定して推論を実行
+output = processor.set_text_prompt(state=inference_state, prompt="tomato")
 
 plot_results(image, output)
 plt.show()
